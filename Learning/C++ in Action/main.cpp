@@ -13,6 +13,12 @@ class InputNum
 	{
 		return _num;
 	}
+
+	void SetValue(int i)
+	{
+		_num = i;
+	}
+
 	private:
 		int _num;
 };
@@ -20,6 +26,8 @@ class InputNum
 int main()
 {
 	InputNum num;
+	std::cout << "The value is " << num.GetValue() << std::endl;
+	num.SetValue(10);
 	std::cout << "The value is " << num.GetValue() << std::endl;
 	return 0;
 }
