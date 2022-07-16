@@ -4,7 +4,7 @@
 class InputNum
 {
 public:
-	InputNum(char msg [])
+	InputNum()
 	{
 		std::cout << "Enter a number: " << std::endl;
 		std::cin >> _num;
@@ -17,11 +17,7 @@ public:
 
 	void factorial()
 	{
-		InputNum aNum();
-		std::cout << std::endl;
-		std::cout << _num << " factorial " << aNum._num << std::endl;
-		std::cout << "==========" << std::endl;
-
+		InputNum aNum;
 		for(int i = 0; i <= aNum._num; i++)
 		{
 			std::cout << std::pow(_num, i) <<  std::endl;
