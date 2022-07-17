@@ -1,12 +1,11 @@
 #include <iostream>
-#include <math.h>
 
 class InputNum
 {
 public:
-	InputNum(char msg [])
+	InputNum(char msg[])
 	{
-		std::cout << "Enter a number: " << std::endl;
+		std::cout  << msg;
 		std::cin >> _num;
 	}
 
@@ -15,28 +14,22 @@ public:
 		return _num;
 	}
 
-	void factorial()
+	void AddInput(char msg[])
 	{
-		InputNum aNum();
-		std::cout << std::endl;
-		std::cout << _num << " factorial " << aNum._num << std::endl;
-		std::cout << "==========" << std::endl;
-
-		for(int i = 0; i <= aNum._num; i++)
-		{
-			std::cout << std::pow(_num, i) <<  std::endl;
-		}
+		InputNum aNum(msg);
+		_num = GetValue() + aNum.GetValue();
 	}
-
 private:
 	int _num;
 };
 
+const char SumString[] = "The sum is ";
 
 int main()
 {
-	InputNum num;
-	std::cout << "The value is " << num.GetValue() << std::endl;
-	num.factorial();
+	InputNum num("Enter number ");
+	num.AddInput("Another one  ");
+	num.AddInput("One more     ");
+	std::cout << SumString << num.GetValue() << std::endl;
 	return 0;
 }
